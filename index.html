@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/blood.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+	<link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Lets Do Some Crimes\<T\>
+Kiera Lord
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Introductions
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Who I am
+<div class="callout callout-color7">
+<div class="callout-title">
+<div class="callout-icon">
+
+<i class="fas fa-bolt" ></i>
+
+</div>
+<div class="callout-title-inner">
+
+Kiera Lord  (Cratesmith)  
+
+</div>
+</div>
+<div class="callout-content">
+
+Programmer @ 5 Lives Studios
+
+</div>
+</div>
+<!-- .element: style="font-size: 50%" "="true" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+</div>
+
+
+### Some stuff I've done
+</div>
+
+
+</div>
+
+
+-  PS2/XB: **Destroy All Humans 2**
+-  360/PS3: **The Dark Knight (Unreleased)**
+-  Wii: **Next big thing (Unreleased)**
+-  Web: **Alternator**
+-  PC/PS3: **Vessel**
+-  iOS/Droid: **Sim Cell**
+-  iOS/Droid: **Codebreakers**
+-  PC/Mac: **Kinect & VR support for Tail Drift**
+-  GearVR: **Small**  **(unreleased)**
+-  Cardboard: **RACQ Bike VR**
+-  GearVR: **Zombie Nom Nom**
+-  Switch/PS4/Xbone: **Windbound**
+</div>
+
+ <!-- .element: style="font-size: 24px" style=="true" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Obvious as fuck stuff that should go without saying
+ 
+* Trans rights are human rights
+  
+* Sovereignty was never ceded
+  
+* Black lives matter
+  
+* Free the fucking refugees
+  
+* Fuck murdoch 
+  
+* Kink belongs in pride, cops don't
+  
+* Be gay, do crime.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## What this talk is
+<div class="callout callout-color1">
+<div class="callout-title">
+<div class="callout-icon">
+
+<i class="fas fa-clipboard-list" ></i>
+
+</div>
+<div class="callout-title-inner">
+
+A sequence of "how to build this" for generics 
+
+</div>
+</div>
+<div class="callout-content">
+
+- These are all things I've found useful and shipped games with
+
+- Going to start off simple and work up towards more complex things
+
+<!-- .element: style="font-size: 60%" "="true" -->
+
+</div>
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### What this talk isn't
+<div class="callout callout-color6">
+<div class="callout-title">
+<div class="callout-icon">
+
+<i class="fas fa-times" ></i>
+
+</div>
+<div class="callout-title-inner">
+
+I'm not telling you how you should code
+
+</div>
+</div>
+<div class="callout-content">
+
+- I'm not telling "you have to do this" or "you shouldn't do this" or "this thing is bad"
+
+- I find people throw rules and judgements around a lot when programming without much thought.
+
+- You're all smart people. If you're doing something that seems weird I reckon you've got a good reason.
+
+<!-- .element: style="font-size: 60%" "="true" -->
+
+</div>
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### What (I'm hoping) you will get from this talk
+
+
+
+* Doesn't matter if you don't follow on with every tool, concept or example
+
+* My goal is to get you to understand the theory and a process I use for building complex generics. 
+
+* Hopefully in a way where you can apply it in a way that works for you
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Part 0 : Before we start
+* Generics primer
+* When to/not to use generics
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Part 0 : Generics!
+
+<div class="" style="font-size: 80%" >
+
+* C# generics are code templates, where a block of code is used to automatically define new classes and/or methods for any compatible types it's used with. 
+
+* You've probably used them for Lists (and other containers), Singletons, and also possibly in some methods without even realizing. But we're going to go a bit harder than that.
+
+* When the program is compiled, all used variants of a generic class or method are built. 
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Part 0 : The where keyword
+
+<div class="" style="font-size: 80%" >
+
+* Generics are defined by the parameters they take, which always have to be types (in the case of c#).
+* By default, any type is valid for a generic parameter... however because it could be anything you can't access anything from it. 
+* But you can use the 'where' keyword to restrict the type. And then you can access the members and type features ensured by those restrictions (mostly) 
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### When NOT to use generics
+
+* Most of the time!
+  
+* If you can do the same thing without them
+
+* Generics are more complicated and harder to maintain than normal solutions. But they can do things that you can't do otherwise.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### When to use generics
+
+* To avoid boilerplate or copy-paste classes to handle different types.
+
+* To avoid boxing on structs where you don't know their exact type.
+
+* If you want to enumerate an unknown container (again, boxing)
+
+* When have a very specific kind of API or you want to build that's not really possible otherwise.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+###  What is boxing and why you should be scared
+
+
+There's two types of memory in c#
+
+<split even gap=2 style="font-size:60%">
+<div class="callout callout-color-default">
+<div class="callout-title">
+<div class="callout-icon">
+
+<i class="fas fa-pencil-alt" ></i>
+
+</div>
+<div class="callout-title-inner">
+
+Stack
+
+</div>
+</div>
+<div class="callout-content">
+
+* method local variables
+
+* values types
+
+* preallocated
+
+</div>
+</div>
+
+<div class="callout callout-color-default">
+<div class="callout-title">
+<div class="callout-icon">
+
+<i class="fas fa-pencil-alt" ></i>
+
+</div>
+<div class="callout-title-inner">
+
+Heap
+
+</div>
+</div>
+<div class="callout-content">
+
+* persistent storage
+
+* reference types
+
+* dynamic allocation
+
+* garbage collected
+
+</div>
+</div>
+</split>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### What is boxing and why you should be scared
+
+<split even gap=2 style="font-size:60%">
+<div class="callout callout-color-default">
+<div class="callout-title">
+<div class="callout-icon">
+
+<i class="fas fa-pencil-alt" ></i>
+
+</div>
+<div class="callout-title-inner">
+
+Stack
+
+</div>
+</div>
+<div class="callout-content">
+
+local method storage
+
+values types
+
+</div>
+</div>
+
+* Stack memory is fast and cache friendly
+  
+* Methods put a block of memory (stack frame) in the stack to store their local variables while being executed.
+  
+* Only value types (numbers/structs/enums) can be stored directly in the stack
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### What is boxing and why you should be scared
+
+<split even gap=2 style="font-size:60%">
+
+* Heap memory is for anything that can't be stored in the stack. 
+  
+* Reference types  (classes, strings, anything nullable) always live in the heap.
+  
+* Allocating/garbage collecting memory in the heap is slow and accessing things in the heap is often less cache friendly. 
+  
+
+<div class="callout callout-color-default">
+<div class="callout-title">
+<div class="callout-icon">
+
+<i class="fas fa-pencil-alt" ></i>
+
+</div>
+<div class="callout-title-inner">
+
+Heap
+
+</div>
+</div>
+<div class="callout-content">
+
+* persistent storage
+
+* reference types
+
+* dynamic allocation
+
+* garbage collected
+
+</div>
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### What is boxing and why you should be scared
+
+The problem arises when a value type in the stack gets stored in a variable/parameter/return type that can accept reference types.
+```CSharp
+object referenceVariable = 3; // like this!
+Object.ToString(new MyStruct()); // or this!
+IEnumerator GetEnumerator() => new StructEnumerator(); // or this!
+```
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### What is boxing and why you should be scared
+
+In these case c# invisibly allocates a new 'box' of heap memory to store a copy of the value type from the stack. 
+
+The reference type variable then is pointed to that 'box'.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### What is boxing and why you should be scared
+
+This invisibly allocates -lots- of small pieces of  heap memory that are bad for performance. 
+
+I highly recommend using an IDE that can highlight boxing allocations in your code.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Ok, it's crime time now.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Crime 1 : Enumerators
+Writing functions that work on multiple collection types have... problems
+
+Let's get around those
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Wait... what's wrong collections?
+
+Unessicary boxing allocations. 
+Lots of them.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### What's getting boxed?
+
+Spot the allocation
+``` CSharp
+public Item FindFirstItemOfType(ItemType itemType, IEnumerable<Item> itemCollection)
+{
+	foreach(var current in itemCollection)
+	{
+		if(current.itemType == itemType)
+		{
+			return item;
+		}
+	}
+	return null;
+}
+```
+<!-- .element: style="font-size: 40%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### What's getting boxed?
+Spot the allocation
+``` CSharp [3]
+public Item FindFirstItemOfType(ItemType itemType, IEnumerable<Item> itemCollection)
+{
+	foreach(var current in itemCollection)
+	{
+		if(current.itemType == itemType)
+		{
+			return item;
+		}
+	}
+	return null;
+}
+```
+<!-- .element: style="font-size: 40%" -->
+
+Yeah I know, wild right?
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### What's going on here
+Here's the more literal code
+``` CSharp
+public Item FindFirstItemOfType(ItemType itemType, IEnumerable<Item> itemCollection)
+{
+	// boxing happens here
+	var enumerator = itemCollection.GetEnumerator(); 
+	
+	while(enumerator.MoveNext())
+	{
+		var current = enumerator.Current;
+		if(current.itemType == itemType)
+		{
+			return item;
+		}
+	}
+	return null;
+}
+```
+<!-- .element: style="font-size: 40%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Why is this boxing?
+
+Almost all collections use structs instead of classes for their enumerators, because a struct can be created on the stack without allocating.
+
+```CSharp
+public class MyCollection<T> : IEnumerable<T>
+{
+	...
+	//foreshaowing!
+	public MyEnumerator GetEnumerator() => new MyEnumerator(this);
+	IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
+	IEnumerator<T> IEnumerable<T>.GetEnumerator() => this.GetEnumerator();
+	...
+	public struct MyEnumerator : IEnumerator<T>
+	{
+		...
+	}
+	...
+}
+```
+<!-- .element: style="font-size: 40%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Why is this boxing?
+
+The problem is, the IEnumerable and  IEnumerable\<T\>, interfaces defines GetEnumerator as returning an interface. Which is a reference type. 
+```CSharp
+public interface Enumerable : IEnumerable
+{
+	public IEnumerator GetEnumerator();  
+}
+
+public interface IEnumerable<T> : IEnumerable
+{
+	public IEnumerator<T> GetEnumerator();  
+}
+```
+<!-- .element: style="font-size: 40%" -->
+
+So if we use those methods and return the struct enumerator it gets boxed
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### So... we can't use enumerators at all?
+
+* That's how it looks hey? But there's a catch.
+  
+* The C# devs knew this was a problem, but rewriting IEnumerable wouldn't have been backwards compatible. So instead...
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Ducking hell
+
+
+```CSharp
+public class MyCollection : IEnumerable<T>
+{
+	..
+	// version to use for foreach
+	public MyStructEnumerator GetEnumerator() => new MyStructEnumerator();
+	
+	// hidden so only used by the interface... hopefully never
+	IEnumerator<T> IEnumerable<T>.GetEnumerator() => this.GetEnumerator();
+	IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
+	...
+}
+```
+<!-- .element: style="font-size: 40%" -->
+
+* Collections now implement their own public `GetEnumerator()` method of the true enumerator type. (implementing the interfaces explicitly to avoid using them where possible)
+<!-- .element: style="font-size: 80%" -->
+
+* This is because `foreach` doesn't use `IEnumerable<T>`, it now looks for any accessible `GetEnumerator` method first (which is called duck typing)
+<!-- .element: style="font-size: 80%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Ducking hell foreach
+
+  
+* This only helps if the type of the variable used exposes that specific `GetEnumerator()` method.  
+
+* If we try to call it in a context where it can only find the interface, it uses the interface versions, they return the struct enumerator as an interface, boxing it.
+  
+  Therefore... there's no way to call the right `GetEnumerator()` method from interfaces or generic parameters pointing at an enumerable.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### So... we can't call the right GetEnumerator()?
+
+Yes
+
+... we can get around that though
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Who needs the container?
+
+This is how we do it. We get the user to give us the enumerator rather than the container.
+<!-- .element: style="font-size: 80%" -->
+``` CSharp
+public Item FindFirstItemOfType<T>(ItemType itemType, in T enumerator) 
+	where T:IEnumerator<Item>
+{
+	while(enumerator.MoveNext())
+	{
+		var current = enumerator.Current;
+		if(current.itemType == itemType)
+		{
+			return item;
+		}
+	}
+	return null;
+}
+```
+<!-- .element: style="width: 80%; font-size: 40%" -->
+``` CSharp
+public Item ExampleUse(ItemType itemType, List<Items> itemsList)	
+	=> FindFirstItemOfType(itemType, itemsList.GetEnumerator());
+```
+<!-- .element: style="width: 80%; font-size: 40%" -->
+But I'm sure some of you are thinking "wait... IEnumerator is an interface, so... won't this box?"
+<!-- .element: style="font-size: 80%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Who needs the container?
+Nope! That's just a type constraint!
+
+In the previous example the generic would create and use this variant of the method.
+``` CSharp
+public Item FindFirstItemOfType`1(ItemType itemType, in List<Item>.Enumerator enumerator) 
+{
+	while(enumerator.MoveNext())
+	{
+		var current = enumerator.Current;
+		if(current.itemType == itemType)
+		{
+			return item;
+		}
+	}
+	return null;
+}
+```
+<!-- .element: style="font-size: 40%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Who needs the container?
+
+The only downside to this method is that Enumerators are a bit more of a pain than dealing with a collection itself. 
+
+You don't know the item count, you can only iterate the items in whatever order the enumerator decides to give them to you.
+
+You also need to take the enumerator type as a generic parameter.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### This leads to some very crimey ideas though.
+
+... there's nothing saying we have to pass in the container's default enumerator.
+
+I wonder what sort of things we could get up to if we started writing our own struct enumerators.
+
+What if we made generic struct enumerators that contain and iterate other enumerators selectively?
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### We'll get to that crime spree later.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Crime 2: Enums
+Enums are cooler than you might think. 
+
+Lets make them easier to use.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Hang on... why enums?
+
+Pros
+* Enums are just strongly typed numbers
+* Can any 8 - 64bit integer value type. 
+* Work as named constants & bitflags 
+* Super easy to use in editors and so forth.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Hang on... why enums?
+
+Cons
+* The API for working with them is old as the hills, and a lot of things like looking up names cause allocations. (even System.Enum.HasFlags does a boxing allocation! C'mon!)
+* There's no good way to convert generic parameters that are enums to/from their backing integer type when they're being used as generics. (casting doesn't work in this context)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### First step. 
+
+<div class="callout callout-color4">
+<div class="callout-title">
+<div class="callout-icon">
+
+<i class="fas fa-question-circle" ></i>
+
+</div>
+<div class="callout-title-inner">
+
+What are we after?
+
+</div>
+</div>
+<div class="callout-content">
+
+* A static lookup table to replace System.Enum methods
+
+* Has to be auto-initialized before first use
+
+* Generic uint64<->enum conversions and other helper functions
+
+</div>
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Static lookup table
+This parts easy. Static class for the table. 
+
+``` CSharp
+using System;  
+public static class EnumInfo<T> where T : Enum  
+{  
+	// static constructor
+	//
+	// This gets called only once. 
+	// before this class is used for the first time.  
+	static EnumInfo1()  
+	{  
+	    // save all the data from the System.Enum lookup methods
+		names = Enum.GetNames(typeof(T));  
+		values = (T[])Enum.GetValues(typeof(T));  
+		underlyingType = Enum.GetUnderlyingType(typeof(T));  
+	}  
+	public static Type underlyingType { get; private set; }  
+	public static T[] values { get; private set; }  
+	public static string[] names { get; private set; }  
+}
+``` 
+<!-- .element: style="font-size: 40%" -->
+
+Each variant of EnumInfo\<T\> is a unique class.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Designing the methods
+Focus on 'how will I use this' before worrying about how it'll work.
+
+``` CSharp [4-14]
+[Test]
+public void TestAPI()
+{
+    // convert to/from uint
+    short idVal = 4; 
+    var myId = EnumInfo.AsEnum<ShortEnum>(idVal);
+    short myIdVal = (short)EnumInfo.AsUInt64(myId);
+    Assert.AreEqual(idVal, myIdVal);
+    
+    // lookup names  
+	Assert.IsTrue(EnumInfo.HasName(ShortEnum.FlagA));  
+	var name = EnumInfo.AsName(ShortEnum.FlagA);  
+	var name2 = ShortEnum.FlagA.ToString();  
+	Assert.AreEqual(name, name2);
+}
+```
+<!-- .element: style="font-size: 40%" -->
+Unit tests are a pretty good workbench for this
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### AsEnum implmentation
+``` CSharp [4-5]
+public static class EnumInfo  
+{
+	...	
+	public static T AsEnum<T>(short self) where T : struct, Enum 
+		=> EnumInfo<T>.AsEnum((ushort)self);  
+	...	
+}
+```
+<!-- .element: style="font-size: 30%" -->
+
+``` CSharp [4-26]
+public static class EnumInfo<T> where T : struct,Enum
+{
+	...
+	public static T AsEnum(ulong number)
+	{
+		switch (UnsafeUtility.SizeOf<T>())
+		{
+			case sizeof(byte):
+				byte b = (byte)number;
+				return UnsafeUtility.As<byte,T>(ref b);
+			
+			case sizeof(ushort):
+				ushort s = (ushort)number;
+				return UnsafeUtility.As<ushort,T>(ref s);
+			
+			case sizeof(uint):
+				uint i = (uint)number;
+				return UnsafeUtility.As<uint,T>(ref i);
+			
+			case sizeof(ulong):  
+				return UnsafeUtility.As<ulong, T>(ref number);
+			
+			default:             
+				throw new ArgumentOutOfRangeException();
+		}
+	}
+	...
+}
+```
+<!-- .element: style="font-size: 30%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### AsUInt64 implementation
+``` CSharp [4-6]
+public static class EnumInfo  
+{
+	...	
+	public static ulong AsUInt64<T>(T self) 
+		where T : struct, Enum  
+		=> EnumInfo<T>.AsUInt64(self);
+	...	
+}
+```
+<!-- .element: style="font-size: 30%" -->
+
+``` CSharp [4-17]
+public static class EnumInfo<T> where T : struct,Enum
+{
+	...
+	public static ulong AsUInt64(T value)
+	{
+		// Using unity's unsafe utility to avoid extra mess.
+		// you can use an unsafe method with Unsafe.As 
+		// but the method will need to be flagged unsafe
+		return UnsafeUtility.SizeOf<T>() switch
+		{
+			sizeof(byte) => UnsafeUtility.As<T, byte>(ref value),
+			sizeof(ushort) => UnsafeUtility.As<T, ushort>(ref value),
+			sizeof(uint) => UnsafeUtility.As<T, uint>(ref value),
+			sizeof(ulong) => UnsafeUtility.As<T, ulong>(ref value),
+			_ => throw new ArgumentOutOfRangeException()
+		};
+	}
+	...
+}
+```
+<!-- .element: style="font-size: 30%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### AsName/HasName implmentation
+
+``` CSharp [4-10]
+public static class EnumInfo  
+{
+	...	
+	public static bool HasName<T>(T self) where T : struct,Enum   
+		=> EnumInfo<T>.TryGetIndex(self, out int _);
+		   
+	public static string AsName<T>(T self) where T : struct,Enum  
+		=> EnumInfo<T>.TryGetIndex(self, out int index)  
+	      ? EnumInfo<T>.names[index]  
+	      : "<unknown>";
+	...	
+}
+```
+<!-- .element: style="font-size: 30%" -->
+
+``` CSharp [4-20]
+public static class EnumInfo<T> where T : struct,Enum
+{
+	...
+	public static bool TryGetIndex(T value, out int index)
+	{
+		var number = AsUInt64(value);
+		if ((int)number >= 0 && (int)number < values.Length && uint64Values[(int)number]==number)
+		{
+			index = (int)number;
+			return true;
+		} 
+		
+		index = Array.BinarySearch(uint64Values, number);
+		if (index < 0)
+		{
+			index = -1;
+			return false;
+		}
+		return true;
+	}
+	...
+}
+```
+<!-- .element: style="font-size: 30%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Before we go any further. 
+
+We need to have *that* talk
+
+The one about inferred generic method parameters.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Inferred generic methods
+
+Let's compare calling AsEnum and AsUInt64.
+
+``` CSharp 
+var myId = EnumInfo.AsEnum<ShortEnum>(idVal);
+```
+
+``` CSharp 
+short myIdVal = (short)EnumInfo.AsUInt64(myId);
+```
+
+Hang on... we don't have to supply \<ShortEnum></ShortEnum> when we call AsUInt64?
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Inferred generic methods
+
+When we call AsUInt64() T can be inferred from the method parameter 'self'. 
+<!-- .element: style="font-size: 70%" -->
+
+``` CSharp [4-9]
+public static class EnumInfo  
+{
+	...	
+	public static T AsEnum<T>(short self) where T : struct, Enum 
+		=> EnumInfo<T>.AsEnum((ushort)self);  
+		
+	public static ulong AsUInt64<T>(T self) 
+		where T : struct, Enum  
+		=> EnumInfo<T>.AsUInt64(self);
+	...	
+}
+```
+<!-- .element: style="width: 60%; font-size: 30%" -->
+
+This only works if ALL generic parameter types are present as method parameters.  E.g.
+<!-- .element: style="font-size: 70%" -->
+
+```CSharp
+void MyMethod1<T1,T2,T3>(T1 arg1, T2 arg2){}  // T3 isn't supplied
+
+void MyMethod2<T>(List<T> arg1) {} // T isn't used explicitly
+
+void MyMethod3<T1,T2>(T1 arg1, T2 arg2) {} // OK! We can infer this one!
+
+```
+<!-- .element: style="width: 60%; font-size: 30%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Inferred generic parameters
+
+Generic methods should avoid needing explicitly supplied generic parameters if they can.
+
+In some cases they make sense to be unavoidable. 
+``` CSharp
+// requiring this is fine
+EnumInfo.ToEnum<ShortEnum>(3); 
+
+// requiring this would be bad
+EnumInfo.AsUInt64<ShortEnum>(ShortEnum.SomeValue); 
+```
+
+If it feels wrong, it is wrong.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Inferred generic parameters
+
+That's cool and all but it seems just like a shorthand right?
+
+Well... it gets -really- useful in conjunction with other things like generic extension methods and temporary structs.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Extension methods
+
+Instead of requiring this
+``` CSharp [6-7,11-12]
+var myId = EnumInfo.AsEnum<ShortEnum>(idVal);
+short myIdVal = (short)EnumInfo.AsUInt64(myId);
+```
+
+We can also allow this
+```  CSharp [6-7,11-12]
+var myId = idVal.AsEnum<ShortEnum>();
+short myIdVal = (short)myId.AsUInt64();
+```
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Extension methods
+
+Any static method in a non-generic static class can be used as an extension method. 
+<!-- .element: style="font-size: 70%" -->
+
+``` CSharp [4-7]
+public static class ExampleExtensions
+{
+	...	
+	public static int AddOne(this int self)
+	{
+		return i+1;
+	}
+	...	
+}
+```
+<!-- .element: style="width: 60%; font-size: 40%" -->
+
+The 'this' keyword on the first parameter indicates that the first parameter can be provided by whatever is used to call the method.
+<!-- .element: style="font-size: 70%" -->
+
+```CSharp
+	Debug.Log(3.AddOne()); // "4"
+	Debug.Log(ExampleExtensions.AddOne(3)); // "4"
+```
+<!-- .element: style="width: 60%; font-size: 40%" -->
+
+You can then call the extension 'as a member of' anything that could be used as its first parameter.
+<!-- .element: style="font-size: 70%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Generic Extension methods
+
+These work just like any other extension method.  
+<!-- .element: style="font-size: 70%" -->
+
+``` CSharp [4-7]
+public static class ExampleExtensions
+{
+	...	
+	public static string CountString<T>(this T self) 
+		where T:ICollection
+	{
+		return $"{self.Count} items";
+	}
+	...	
+}
+```
+<!-- .element: style="width: 80%; font-size: 40%" -->
+
+They can be 'called on' anything that is valid for their first parameter.
+<!-- .element: style="font-size: 70%" -->
+
+```CSharp
+	var myList = new List<int>(new[] {1,2,3});
+	Debug.Log(myList.CountString()); // "3 items"
+	
+	var myHashSet = new HashSet<int>(new[] {1,2,3});
+	Debug.Log(myHashSet.CountString()); // "3 items"
+```
+<!-- .element: style="width: 80%; font-size: 40%" -->
+
+In this case, anything that implements ICollection
+<!-- .element: style="font-size: 70%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Extension methods
+
+Converting AsEnum to an extension method is easy.
+Already a static method in a static class
+<!-- .element: style="font-size: 80%" -->
+
+``` CSharp [4]
+public static class EnumInfo  
+{
+	...	
+	public static T AsEnum<T>(short self) where T : struct, Enum 
+		=> EnumInfo<T>.AsEnum((ushort)self);  
+	...	
+}
+```
+<!-- .element: style="width: 80%; font-size: 40%" -->
+
+It just needs the 'this' keyword 
+<!-- .element: style="font-size: 80%" -->
+``` CSharp [4]
+public static class EnumInfo  
+{
+	...	
+	public static T AsEnum<T>(this short self) where T : struct, Enum 
+		=> EnumInfo<T>.AsEnum((ushort)self);  
+	...	
+}
+```
+<!-- .element: style="width: 80%; font-size: 40%" -->
+
+Now it can extend any short
+<!-- .element: style="font-size: 80%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Extension methods
+
+Converting AsUInt64\<T\> is the same. 
+``` CSharp [4-6]
+public static class EnumInfo  
+{
+	...	
+	public static ulong AsUInt64<T>(T self) 
+		where T : struct, Enum  
+		=> EnumInfo<T>.AsUInt64(self);
+	...	
+}
+```
+<!-- .element: style="width: 80%; font-size: 40%" -->
+
+It just needs the 'this'
+``` CSharp [4-6]
+public static class EnumInfo  
+{
+	...	
+	public static ulong AsUInt64<T>(this T self) 
+		where T : struct, Enum  
+		=> EnumInfo<T>.AsUInt64(self);
+	...	
+}
+```
+<!-- .element: style="width: 80%; font-size: 40%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Hmm... Next crime
+
+Lets put those generic extension methods to use along with the enumerator stuff we did before
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Crime 3 : Zinq 
+Linq very shit at runtime.
+
+Lets make something that can replace uses of it in game code without having to totally rewrite them.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Linq syntax
+
+
+```CSharp []
+var myList = new List<int>(new [] {0,1,2,3});
+var query = myList.Where(x=>x>1)
+				  .Select(x=>x+1);				  
+foreach(var i in query)
+{
+	print(i); // "3", "4"
+}
+```
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### How linq works
+
+
+Each Linq function is a generic extension method that 
+1. takes an `IEnumerable<T>` as its this parameter 
+2. returns a custom `IEnumerable<T>` that performs the operation
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Whats wrong with linq
+
+
+Lets look at how `Where()` is implemented 
+``` CSharp
+public static IEnumerable<TSource> Where<TSource>(
+      this IEnumerable<TSource> source,
+      Func<TSource, bool> predicate)
+{
+	...
+}
+```
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Whats wrong with linq
+
+
+This allocates heap memory in three different ways
+1. It will box the enumerator.
+2. It returns a new allocated IEnumerable 
+3. Predicate will almost always be a `closure`
+
+``` CSharp
+public static IEnumerable<TSource> Where<TSource>(
+      this IEnumerable<TSource> source,
+      Func<TSource, bool> predicate)
+{
+	...
+}
+```
+Lets see what we can do about those
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 1. Boxing the enumerator
+
+
+Same as before. `IEnumerable<T>` will only give a boxed version of `GetEnumerator()`
+``` CSharp
+public static IEnumerable<TSource> Where<TSource>(
+      this IEnumerable<TSource> source,
+      Func<TSource, bool> predicate)
+{
+	...
+}
+```
+<!-- .element: style="font-size: 40%" -->
+
+So lets take a generic enumerator parameter instead of the `IEnumerable<T>` interface
+``` CSharp [1-2,4]
+public static IEnumerable<TSource> Where<TSource,TEnumerator>(      
+		this TEnumerator enumerator,
+		Func<TSource, bool> predicate)
+    where TEnumerator:struct,IEnumerator<TSource>      
+{
+	...
+}
+```
+<!-- .element: style="font-size: 40%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 2. Returning IEnumerable
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 2. Returning IEnumerable 
+
+
+The return type `IEnumerable<TSource>` is a guaranteed allocation (either a new class or a boxed struct).
+<!-- .element: style="font-size: 70%" -->
+``` CSharp
+public static IEnumerable<TSource> Where<TSource,TEnumerator>(
+      this TEnumerator enumerator,
+      Func<TSource, bool> predicate)
+{
+	...
+}
+```
+<!-- .element: style="font-size: 40%" -->
+
+So lets replace it with a custom enumerator struct.
+<!-- .element: style="font-size: 70%" -->
+``` CSharp
+public static WhereEnumerator<TSource,TEnumerator> Where<TSource,TEnumerator>(
+		this TEnumerator enumerator,
+	    Func<TSource, bool> predicate)
+    where TEnumerator:struct,IEnumerator<TSource>
+{
+	return new WhereEnumerator<TSource,TEnumerator>(enumerator, predicate);
+}
+
+public struct WhereEnumerator<TSource,TEnumerator> : IEnumerator<TSource>
+	where TEnumerator:struct,IEnumerator<TSource>
+{
+	...
+}
+```
+<!-- .element: style="font-size: 40%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 2. Returning IEnumerable 
+Here's the full source for that where enumerator
+```CSharp
+public struct WhereEnumerator<TSource,TEnumerator> : IEnumerator<TSource>
+		where TEnumerator: struct,IEnumerator<TSource>
+	{
+		TEnumerator         enumerator;
+		readonly Func<TSource, bool> predicate;
+		public WhereEnumerator(in TEnumerator _enumerator, Func<TSource, bool> _predicate)
+		{
+			enumerator = _enumerator;
+			predicate = _predicate;
+		}
+
+		public bool MoveNext()
+		{
+			while (enumerator.MoveNext())
+			{
+				if (predicate(Current)) 
+					return true;
+			}
+			return false;
+		}
+
+		public void Reset() => enumerator.Reset();
+		public TSource Current => enumerator.Current;
+		object IEnumerator.Current => enumerator.Current;
+		public void Dispose() => enumerator.Dispose();
+	}
+```
+<!-- .element: style="font-size: 30%" -->
+These are a lot easier to write than they look
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 2. Returning IEnumerable 
+All work is done in `MoveNext()`
+```CSharp [12-20]
+public struct WhereEnumerator<TSource,TEnumerator> : IEnumerator<TSource>
+		where TEnumerator: struct,IEnumerator<TSource>
+	{
+		TEnumerator         enumerator;
+		readonly Func<TSource, bool> predicate;
+		public WhereEnumerator(in TEnumerator _enumerator, Func<TSource, bool> _predicate)
+		{
+			enumerator = _enumerator;
+			predicate = _predicate;
+		}
+
+		public bool MoveNext()
+		{
+			while (enumerator.MoveNext())
+			{
+				if (predicate(Current)) 
+					return true;
+			}
+			return false;
+		}
+
+		public void Reset() => enumerator.Reset();
+		public TSource Current => enumerator.Current;
+		object IEnumerator.Current => enumerator.Current;
+		public void Dispose() => enumerator.Dispose();
+	}
+```
+<!-- .element: style="font-size: 30%" -->
+The rest is just a wrapper around `enumerator`.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 3. Closures
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 3. Closures 
+
+
+
+Linq methods are generally used in conjunction with lambda expressions. (inline methods)
+
+```CSharp []
+var myList = new List<int>(new [] {0,1,2,3});
+var query = myList.Where(x=> x>1);
+```
+<!-- .element: style="font-size: 40%" -->
+
+However lambdas can 'capture' variables from the method they're defined in. 
+
+```CSharp []
+var myList = new List<int>(new [] {0,1,2,3});
+var greaterThan = 1;
+var query = myList.Where(x=> x>greaterThan);
+```
+<!-- .element: style="font-size: 40%" -->
+
+If a lambda 'captures' any values they get saved in 'closure' box on the heap.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 3. Closures 
+
+
+So we need to give the user a way to avoid having to capture values. 
+
+As a comparison, static methods cannot capture values. 
+
+```CSharp []
+static bool MyMethod(int x) => x>1;
+```
+<!-- .element: style="font-size: 40%" -->
+```CSharp []
+var myList = new List<int>(new [] {0,1,2,3});
+var query = myList.Where(MyMethod);
+```
+<!-- .element: style="font-size: 40%" -->
+
+If we wanted to supply an invariant value it would need to be passed as a method parameter.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 3. Closures 
+
+To do this the query method would need to take the invariant value as a method parameter and pass it to the lambda each time.
+```CSharp []
+var myList = new List<int>(new [] {0,1,2,3});
+var query = myList.Where(1, (inv,x)=>x>inv);
+```
+<!-- .element: style="font-size: 40%" -->
+You really only need one parameter for this because you could pass in a value tuple.
+```CSharp []
+var myList = new List<int>(new [] {0,1,2,3});
+var query = myList.Where((min:1, max:2), (inv,x)=> x>=inv.min && x<=inv.max);
+```
+<!-- .element: style="font-size: 40%" -->
+Sadly linq doesn't have these overloads
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 3. Closures  
+
+
+But we're rewriting linq... so... 
+```CSharp []
+public WhereEnumerator<TSource,TEnumerator> Where<TSource,TEnumerator>(
+		this TEnumerator enumerator,
+		Func<TSource, bool> predicate)  
+	where TEnumerator:struct,IEnumerator<TSource>
+	   => new WhereEnumerator<TEnumerator>(enumerator, predicate);
+
+public WhereEnumerator<TSource,TEnumerator, TInvariant> Where<TSource,TEnumerator,TInvariant>(
+		this TEnumerator enumerator,
+		in TInvariant invariant, 
+		Func<TInvariant, TSource, bool> predicate)  
+	where TEnumerator:struct,IEnumerator<TSource>
+	   => new WhereEnumerator<TEnumerator, TInvariant>(enumerator, invariant, predicate);
+```
+<!-- .element: style="font-size: 30%" -->
+We can just write an invariant overload of our where function...
+and an invariant version of the enumerator struct.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 3. Closures  
+
+
+And here's the invariant version of the enumerator
+```CSharp []
+public struct WhereEnumerator<TSource, TEnumerator, TInvariant> : IEnumerator<TSource>
+		where TEnumerator: struct,IEnumerator<TSource>
+	{
+		TEnumerator                     enumerator;
+		readonly Func<TInvariant, TSource, bool> predicate;
+		readonly TInvariant                      invariant;
+		
+		public WhereEnumerator(in TEnumerator _enumerator, 
+							   in TInvariant _invariant, 
+							   Func<TInvariant, TSource, bool> _predicate)
+		{
+			invariant = _invariant;
+			enumerator = _enumerator;
+			predicate = _predicate;
+		}
+
+		public bool MoveNext()
+		{
+			while (enumerator.MoveNext())
+			{
+				if (predicate(invariant, Current)) 
+					return true;
+			}
+			return false;
+		}
+
+		public void Reset() => enumerator.Reset();
+		public TSource Current => enumerator.Current;
+		object IEnumerator.Current => enumerator.Current;
+		public void Dispose() => enumerator.Dispose();
+	}
+```
+<!-- .element: style="font-size: 30%; height: 70%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 3. Closures  
+
+
+And here's the invariant version of the enumerator
+```CSharp [1,6,10,12,21]
+public struct WhereEnumerator<TSource, TEnumerator, TInvariant> : IEnumerator<TSource>
+		where TEnumerator: struct,IEnumerator<TSource>
+	{
+		TEnumerator                     enumerator;
+		readonly Func<TInvariant, TSource, bool> predicate;
+		readonly TInvariant                      invariant;
+		
+		public WhereEnumerator(in TEnumerator _enumerator, 
+							   in TInvariant _invariant, 
+							   Func<TInvariant, TSource, bool> _predicate)
+		{
+			invariant = _invariant;
+			enumerator = _enumerator;
+			predicate = _predicate;
+		}
+
+		public bool MoveNext()
+		{
+			while (enumerator.MoveNext())
+			{
+				if (predicate(invariant, Current)) 
+					return true;
+			}
+			return false;
+		}
+
+		public void Reset() => enumerator.Reset();
+		public TSource Current => enumerator.Current;
+		object IEnumerator.Current => enumerator.Current;
+		public void Dispose() => enumerator.Dispose();
+	}
+```
+<!-- .element: style="font-size: 30%; height: 70%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### So that's done... right?
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 4. Ah shit
+
+Generic method inference
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 4. Ahh shit
+
+
+Our new methods can't infer all their generic parameters from their method parameters
+
+We never take `TSource` as a method parameter
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 4. Ahhhhhhh shittttt
+
+
+
+We need to store that generic argument somewhere else.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### The workaround
+
+This will change the end user code slightly. But it's still pretty close.
+
+```CSharp
+var myList = new List<int>(new [] {1,2,3});
+var query = myList.GetEnumerator()
+	.Where(1, (inv,x)=>x>inv);
+
+foreach(var current in query)
+{
+	print(current); // "2", "3"
+}
+```
+<!-- .element: style="font-size: 40%" -->
+
+
+```CSharp [2]
+var myList = new List<int>(new [] {1,2,3});
+var query = Zinq<int>.Begin(myList.GetEnumerator())
+	.Where(1, (inv,x)=>x>inv);
+
+foreach(var current in query)
+{
+	print(current); // "2", "3"
+}
+```
+<!-- .element: style="font-size: 40%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## None of you are cops right?
+
+...shit is going to get wild
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Here's how it works
+
+
+```CSharp
+// static class wrapper
+// partial class so we can use it across files (more like a namespace)
+public static partial class Zinq<TSource> 
+{
+	// helper struct with all the methods
+	// again, partial so we can break this up into one file per query type
+	public ref partial struct Helper<TEnumerator> where TEnumerator: struct,IEnumerator<TSource>
+	{		
+		// The enumerator and constructor to build this.  
+		// readonly prevents it getting modified (this allows us to reuse the query)
+		readonly TEnumerator enumerator; 
+		public Helper(TEnumerator _enumerator) => enumerator = _enumerator;
+		
+		// public GetEnumerator  to allow foreach support
+		public TEnumerator GetEnumerator() => enumerator; 
+
+		// Then... all our enumerator building methods go here 
+		// returning the enumerator wrapped in a new helper so you can chain query methods
+		public Helper<WhereEnumerator<TEnumerator>> Where(Func<TSource, bool> predicate)
+			=> new Helper<WhereEnumerator<TEnumerator>>(new WhereEnumerator<TEnumerator>(enumerator, predicate));
+	}
+
+	// generic method to create the helper struct from an enumerator
+    public static Helper<TEnumerator> Begin<TEnumerator>(in TEnumerator enumerator) 
+        where TEnumerator: struct,IEnumerator<TSource>
+        => new Helper<TEnumerator>(enumerator);
+
+	// enumerators for queries go here 
+	public struct WhereEnumerator<TEnumerator> : IEnumerator<TSource> where TEnumerator: struct,IEnumerator<TSource>
+	{
+		... 
+	}
+}
+```
+<!-- .element: style="font-size: 30%; height: 70%" -->
+Don't worry we'll break this down
+<!-- .element: style="font-size: 70%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Here's how it works
+
+The outer static class Zinq carries the enumerated element type TSource. 
+
+```CSharp
+// static class wrapper
+// partial class so we can use it across files (more like a namespace)
+public static partial class Zinq<TSource> 
+{
+	// generic method to create the helper struct from an enumerator
+    public static Helper<TEnumerator> Begin<TEnumerator>(in TEnumerator enumerator) 
+        where TEnumerator: struct,IEnumerator<TSource>
+        => new Helper<TEnumerator>(enumerator);
+
+	...
+}
+```
+<!-- .element: style="font-size: 40%" -->
+It has a static 'Begin()' method assist in creating the first helper in a query.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Here's how it works
+
+The helper type is a ref struct nested in `Zinq<TSource>` that stores an enumerator.
+<!-- .element: style="height: 50%" -->
+```CSharp
+public static partial class Zinq<TSource> 
+{
+	// helper struct with all the methods
+	// again, partial so we can break this up into one file per query type
+	public ref partial struct Helper<TEnumerator> where TEnumerator: struct,IEnumerator<TSource>
+	{		
+		// The enumerator and constructor to build this.  
+		// readonly prevents it getting modified (this allows us to reuse the query)
+		readonly TEnumerator enumerator; 
+		public Helper(TEnumerator _enumerator) => enumerator = _enumerator;
+		
+		// public GetEnumerator  to allow foreach support
+		public TEnumerator GetEnumerator() => enumerator; 
+
+		// Then... all our enumerator building methods go here 
+		// returning the enumerator wrapped in a new helper so you can chain query methods
+		public Helper<WhereEnumerator<TEnumerator>> Where(Func<TSource, bool> predicate)
+			=> new Helper<WhereEnumerator<TEnumerator>>(new WhereEnumerator<TEnumerator>(enumerator, predicate));
+	}
+}
+```
+<!-- .element: style="font-size: 30%" -->
+All query methods are members of this. They create struct enumerators to do the work. 
+<!-- .element: style="height: 50%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Here's how it works
+
+The query methods return these enumerators inside a helper struct.
+
+```CSharp
+public static partial class Zinq<TSource> 
+{
+	public ref partial struct Helper<TEnumerator> where TEnumerator: struct,IEnumerator<TSource>
+	{		
+		...
+		// Then... all our enumerator building methods go here 
+		// returning the enumerator wrapped in a new helper so you can chain query methods
+		public Helper<WhereEnumerator<TEnumerator>> Where(Func<TSource, bool> predicate)
+			=> new Helper<WhereEnumerator<TEnumerator>>(new WhereEnumerator<TEnumerator>(enumerator, predicate));
+	}
+	...
+}
+```
+<!-- .element: style="font-size: 30%" -->
+
+This allows user to chain another query method from the return type.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Here's how it works
+
+We *could* have all the query enumerators nested inside the helper type...
+
+```CSharp
+public static partial class Zinq<TSource> 
+{
+	...
+	// where enumerator
+	public struct WhereEnumerator<TEnumerator> : IEnumerator<TSource>
+		where TEnumerator: struct,IEnumerator<TSource>
+	{
+		TEnumerator         enumerator;
+		readonly Func<TSource, bool> predicate;
+		public WhereEnumerator(TEnumerator _enumerator, Func<TSource, bool> _predicate)
+		{
+			enumerator = _enumerator;
+			predicate = _predicate;
+		}
+		...
+	}
+}
+``` 
+<!-- .element: style="font-size: 30%" -->
+But that'd generate a lot of unused types. It's better to have them generic so only the variants we use are built.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Here's how it works
+
+The helper type also has a `GetEnumerator()` method that just returns a copy of the stored enumerator
+
+```CSharp [10-11]
+public static partial class Zinq<TSource> 
+{
+	public ref partial struct Helper<TEnumerator> where TEnumerator: struct,IEnumerator<TSource>
+	{		
+		// The enumerator and constructor to build this.  
+		// readonly prevents it getting modified (this allows us to reuse the query)
+		readonly TEnumerator enumerator; 
+		public Helper(TEnumerator _enumerator) => enumerator = _enumerator;
+		
+		// public GetEnumerator  to allow foreach support
+		public TEnumerator GetEnumerator() => enumerator; 
+		...
+	}
+}
+```
+<!-- .element: style="font-size: 30%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Here's how it works
+
+This allows `foreach` to be used on the helper type like this
+
+```CSharp 
+var myList = new List<int>(new [] {1,2,3});
+
+var query = Zinq<int>
+	.Begin(myList.GetEnumerator()) // create first helper 
+	.Where(1, (inv,x)=>x>inv); // get helper around WhereEnumerator
+
+// use the helper's GetEnumerator to iterate our query
+foreach(var current in query) 
+{
+	print(current); // "2", "3"
+}
+```
+<!-- .element: style="font-size: 40%" -->
+And ensures that you can iterate them more than once if you need to.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Final improvements
+
+Finally, it'd be nice to get around having to manually specify `Zinq<Type>.Begin`
+
+```CSharp [2]
+var myList = new List<int>(new [] {1,2,3});
+var query = myList.Zinq().Where(1, (inv,x)=>x>inv); 
+
+foreach(var current in query) 
+{
+	print(current); // "2", "3"
+}
+```
+<!-- .element: style="font-size: 40%" -->
+It'd be much better to just be able to do this
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Final improvements
+
+The best way I've found to do this is to create per-collection type extension methods
+
+``` CSharp
+public static class ZinqListExtension  
+{  
+   public static Zinq<T>.Helper<List<T>.Enumerator> Zinq<T>(this List<T> list)   
+	=> global::Zinq<T>.Begin(list.GetEnumerator());  
+}
+```
+<!-- .element: style="font-size: 40%" -->
+
+You need to make one for each container type you use... but it works pretty well.
+
+Arrays are the only edge case where you just need to write a custom enumerator to call begin on. But that's pretty easy after all this
+<!-- .element: style="font-size: 60%" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## CRIME COMPLETE
+
+Take a break, you've eanred it
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Q&A Time
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/chalkboard/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+	if(isLight(bgColor)){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+		  RevealChalkboard, 
+        ],
+
+
+    	allottedTime: 45 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		customcontrols: {
+			controls: [
+				{id: 'toggle-overview',
+				title: 'Toggle overview (O)',
+				icon: '<i class="fa fa-th"></i>',
+				action: 'Reveal.toggleOverview();'
+				},
+				{ icon: '<i class="fa fa-pen-square"></i>',
+				title: 'Toggle chalkboard (B)',
+				action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+				title: 'Toggle notes canvas (C)',
+				action: 'RevealChalkboard.toggleNotesCanvas();'
+				},
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":false,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
