@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
 	<link rel="stylesheet" href="css/layout.css" />
 	<link rel="stylesheet" href="plugin/customcontrols/style.css">
-	<link rel="stylesheet" href="plugin/chalkboard/style.css">
 
 
     <script defer src="dist/fontawesome/all.min.js"></script>
@@ -88,7 +87,8 @@
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 # Lets Do Some Crimes\<T\>
-Kiera Lord
+
+> Slides: https://cratesmith.github.io/gcap2022
 </div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -106,7 +106,7 @@ Kiera Lord
 </div>
 <div class="callout-title-inner">
 
-Kiera Lord  (Cratesmith)  
+Kiera Lord  (@Cratesmith)  
 
 </div>
 </div>
@@ -237,6 +237,7 @@ I'm not telling you how you should code
 ## Part 0 : Before we start
 * Generics primer
 * When to/not to use generics
+* Boxing
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -702,7 +703,10 @@ What if we made generic struct enumerators that contain and iterate other enumer
 ## Crime 2: Enums
 Enums are cooler than you might think. 
 
-Lets make them easier to use.
+Lets make them easier to use. 
+
+> Source:
+> https://github.com/Cratesmith/cratesmith.enums
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -811,8 +815,8 @@ Unit tests are a pretty good workbench for this
 public static class EnumInfo  
 {
 	...	
-	public static T AsEnum<T>(short self) where T : struct, Enum 
-		=> EnumInfo<T>.AsEnum((ushort)self);  
+	public static T AsEnum<T>(ulong self) where T : struct, Enum 
+		=> EnumInfo<T>.AsEnum(self);  
 	...	
 }
 ```
@@ -986,9 +990,7 @@ This only works if ALL generic parameter types are present as method parameters.
 ```CSharp
 void MyMethod1<T1,T2,T3>(T1 arg1, T2 arg2){}  // T3 isn't supplied
 
-void MyMethod2<T>(List<T> arg1) {} // T isn't used explicitly
-
-void MyMethod3<T1,T2>(T1 arg1, T2 arg2) {} // OK! We can infer this one!
+void MyMethod2<T1,T2>(T1 arg1, T2 arg2) {} // OK! We can infer this one!
 
 ```
 <!-- .element: style="width: 60%; font-size: 30%" -->
@@ -1179,6 +1181,8 @@ Lets put those generic extension methods to use along with the enumerator stuff 
 Linq very shit at runtime.
 
 Lets make something that can replace uses of it in game code without having to totally rewrite them.
+
+> Source: https://github.com/Cratesmith/cratesmith.zinq
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -1858,6 +1862,15 @@ Take a break, you've eanred it
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ## Q&A Time
+
+> Slides:
+> https://github.com/Cratesmith/cratesmith.zinq
+
+> Enums:
+> https://github.com/Cratesmith/cratesmith.enums
+
+> Zinq: 
+> https://github.com/Cratesmith/cratesmith.zinq
 </div></script></section></div>
     </div>
 
@@ -1873,7 +1886,6 @@ Take a break, you've eanred it
 	<script src="plugin/chart/plugin.js"></script>
 	<script src="plugin/menu/menu.js"></script>
 	<script src="plugin/customcontrols/plugin.js"></script>
-	<script src="plugin/chalkboard/plugin.js"></script>
 
     <script>
       function extend() {
@@ -1929,7 +1941,6 @@ Take a break, you've eanred it
 		  RevealChart,
 		  RevealCustomControls,
 		  RevealMenu,
-		  RevealChalkboard, 
         ],
 
 
@@ -1952,14 +1963,6 @@ Take a break, you've eanred it
 				title: 'Toggle overview (O)',
 				icon: '<i class="fa fa-th"></i>',
 				action: 'Reveal.toggleOverview();'
-				},
-				{ icon: '<i class="fa fa-pen-square"></i>',
-				title: 'Toggle chalkboard (B)',
-				action: 'RevealChalkboard.toggleChalkboard();'
-				},
-				{ icon: '<i class="fa fa-pen"></i>',
-				title: 'Toggle notes canvas (C)',
-				action: 'RevealChalkboard.toggleNotesCanvas();'
 				},
 			]
 		},
